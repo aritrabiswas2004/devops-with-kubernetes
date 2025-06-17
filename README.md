@@ -4,6 +4,6 @@
 
 ## Exercises
 
-- [1.1](https://github.com/Repositoir/devops-with-kubernetes/releases/tag/1.1)
+- [1.1](https://github.com/Repositoir/devops-with-kubernetes/tree/1.1/log-output)
 
 
