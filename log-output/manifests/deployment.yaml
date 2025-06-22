@@ -1,3 +1,22 @@
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: log-output-app
+# spec:
+#   replicas: 1
+#   selector:
+#     matchLabels:
+#       app: log-output
+#   template:
+#     metadata:
+#       labels:
+#         app: log-output
+#     spec:
+#       containers:
+#         - name: log-output-app
+#           image: aritrabb/log-output-app
+#
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -6,12 +25,26 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: log-output
+      app: log-output-app
   template:
     metadata:
       labels:
-        app: log-output
+        app: log-output-app
     spec:
       containers:
-        - name: log-output-app
-          image: aritrabb/log-output-app
+        - name: log-writer
+          image: aritrabb/log-writer:latest
+          volumeMounts:
+            - name: shared-logs
+              mountPath: /logs
+        - name: log-reader
+          image: aritrabb/log-reader:latest
+          ports:
+            - containerPort: 3000
+          volumeMounts:
+            - name: shared-logs
+              mountPath: /logs
+      volumes:
+        - name: shared-logs
+          emptyDir: {}
+
