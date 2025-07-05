@@ -7,7 +7,7 @@ def gen_random_string(length):
 
 def write_str_to_file():
     while True:
-        with open("/logs/outputs.log", "a") as fileptr:
+        with open("/logs/outputs.log", "w") as fileptr:
             fileptr.write(f"{dt.now()}: {gen_random_string(3)}-{gen_random_string(5)}-{gen_random_string(2)}\n")
         time.sleep(5)
 

@@ -4,10 +4,15 @@ app = Flask(__name__)
 
 COUNT = -1
 
+def write_pongs_to_file(pongs):
+    with open("/logs/pongs.log", "w") as fileptr:
+        fileptr.write(f"Ping / Pongs: {pongs}\n")
+
 @app.route('/pingpong')
 def hello():
     global COUNT
     COUNT += 1
+    write_pongs_to_file(COUNT)
     yield f"pong {COUNT}"
 
 if __name__ == '__main__':

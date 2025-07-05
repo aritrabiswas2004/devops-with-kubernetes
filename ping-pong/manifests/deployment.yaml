@@ -12,6 +12,14 @@ spec:
       labels:
         app: ping-pong
     spec:
+      volumes:
+        - name: shared-image
+          persistentVolumeClaim:
+            claimName: log-ping-claim 
       containers:
         - name: ping-pong
           image: aritrabb/ping-pong
+          volumeMounts:
+            - name: shared-image
+              mountPath: /logs
+
