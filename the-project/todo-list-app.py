@@ -1,15 +1,27 @@
 import os
 import requests
 import time
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, redirect, request
 
 app = Flask(__name__)
 
 start = time.time()
-
 first_req = True
-
 dirname = os.path.dirname(__file__)
+
+todos = [
+    "Bake a cake",
+    "Learn basic networking",
+    "Learn containerization"
+]
+
+@app.route('/addtodo', methods=['POST'])
+def addtodo():
+    todo_item = request.form.get('todo-input')
+
+    todos.append(todo_item)
+
+    return redirect(url_for('main'))
 
 @app.route('/')
 def main():
@@ -30,7 +42,7 @@ def main():
 
         start = last_refreshed
 
-    return render_template("index.html")
+    return render_template("index.html", todos=todos)
 
 if __name__ == '__main__':
     app.run("0.0.0.0", port=os.environ.get("PORT", 8080))
