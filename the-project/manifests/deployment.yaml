@@ -12,6 +12,13 @@ spec:
       labels:
         app: todo-list
     spec:
+      volumes:
+        - name: image-elapsed
+          persistentVolumeClaim:
+            claimName: todo-list-claim
       containers:
         - name: todo-list-app
           image: aritrabb/todo-list
+          volumeMounts:
+            - name: image-elapsed
+              mountPath: /app/static
