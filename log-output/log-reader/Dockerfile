@@ -3,9 +3,8 @@ FROM python:3.11
 WORKDIR /app
 
 COPY log-reader.py .
-COPY outputs.log .
 
-RUN pip install flask
+RUN pip install flask requests
 
 EXPOSE 3000
 

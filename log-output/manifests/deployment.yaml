@@ -43,21 +43,21 @@ spec:
       labels:
         app: log-output-app
     spec:
+      volumes:
+        - name: shared-logs
+          emptyDir: {}
       containers:
         - name: log-writer
           image: aritrabb/log-writer:latest
           volumeMounts:
-            - name: shared-image
+            - name: shared-logs
               mountPath: /logs
+
         - name: log-reader
           image: aritrabb/log-reader:latest
           ports:
             - containerPort: 3000
           volumeMounts:
-            - name: shared-image
+            - name: shared-logs
               mountPath: /logs
-      volumes:
-        - name: shared-image
-          persistentVolumeClaim:
-            claimName: log-ping-claim
 
