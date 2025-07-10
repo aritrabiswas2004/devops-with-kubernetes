@@ -33,6 +33,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: log-output-app
+  namespace: exercises
 spec:
   replicas: 1
   selector:
