@@ -9,19 +9,13 @@ start = time.time()
 first_req = True
 dirname = os.path.dirname(__file__)
 
-todos = [
-    "Bake a cake",
-    "Learn basic networking",
-    "Learn containerization"
-]
-
-@app.route('/addtodo', methods=['POST'])
-def addtodo():
-    todo_item = request.form.get('todo-input')
-
-    todos.append(todo_item)
-
-    return redirect(url_for('main'))
+@app.route('/todos', methods=['POST'])
+def handle_todos():
+    response = requests.post("http://todo-list-svc:4040/todos", data=request.form)
+    if response.status_code == 200:
+        return redirect("/")
+    else:
+        return "Something went wrong"
 
 @app.route('/')
 def main():
@@ -42,7 +36,9 @@ def main():
 
         start = last_refreshed
 
-    return render_template("index.html", todos=todos)
+    response_todos = requests.get("http://todo-list-svc:4040/todos").json()
+
+    return render_template("index.html", todos=response_todos)
 
 if __name__ == '__main__':
     app.run("0.0.0.0", port=os.environ.get("PORT", 8080))

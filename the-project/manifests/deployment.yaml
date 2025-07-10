@@ -22,3 +22,5 @@ spec:
           volumeMounts:
             - name: image-elapsed
               mountPath: /app/static
+        - name: todo-backend
+          image: aritrabb/todo-backend

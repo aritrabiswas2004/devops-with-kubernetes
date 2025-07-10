@@ -22,7 +22,12 @@ spec:
   selector:
     app: todo-list
   ports:
-    - port: 2345
+    - name: todo-app
+      port: 2345
       protocol: TCP
       targetPort: 8080
+    - name: todo-backend
+      port: 4040
+      protocol: TCP
+      targetPort: 4040
 
