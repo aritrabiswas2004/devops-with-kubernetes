@@ -1,34 +1,3 @@
-# apiVersion: apps/v1
-# kind: Deployment
-# metadata:
-#   name: log-output-app
-# spec:
-#   replicas: 1
-#   selector:
-#     matchLabels:
-#       app: log-output-app
-#   template:
-#     metadata:
-#       labels:
-#         app: log-output-app
-#     spec:
-#       containers:
-#         - name: log-writer
-#           image: aritrabb/log-writer:latest
-#           volumeMounts:
-#             - name: shared-logs
-#               mountPath: /logs
-#         - name: log-reader
-#           image: aritrabb/log-reader:latest
-#           ports:
-#             - containerPort: 3000
-#           volumeMounts:
-#             - name: shared-logs
-#               mountPath: /logs
-#       volumes:
-#         - name: shared-logs
-#           emptyDir: {}
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -47,6 +16,12 @@ spec:
       volumes:
         - name: shared-logs
           emptyDir: {}
+        - name: config
+          configMap:
+            name: log-output-configmap
+            items:
+              - key: "information.txt"
+                path: "information.txt"
       containers:
         - name: log-writer
           image: aritrabb/log-writer:latest
@@ -61,4 +36,12 @@ spec:
           volumeMounts:
             - name: shared-logs
               mountPath: /logs
-
+            - name: config
+              mountPath: /config
+              readOnly: true
+          env:
+            - name: message
+              valueFrom:
+                configMapKeyRef:
+                  name: log-output-configmap
+                  key: MESSAGE

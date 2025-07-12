@@ -1,5 +1,6 @@
 from flask import Flask
 import requests
+import os
 
 app = Flask(__name__)
 
@@ -26,9 +27,18 @@ def read_contents():
     except FileNotFoundError:
         return "No logs yet"
 
+def env_message():
+    return f"env variable: MESSAGE={os.environ.get('message', 'message env does not exist')}"
+
+def file_message():
+    with open("/config/information.txt", "r") as fileptr:
+        contents = fileptr.read()
+
+    return f"file content: {contents}"
+
 @app.route('/')
 def main():
-    return f"{read_contents()}\n{read_pongs()}", {'Content-Type': 'text/plain'}
+    return f"{file_message()}\n{env_message()}\n{read_contents()}\n{read_pongs()}", {'Content-Type': 'text/plain'}
 
 if __name__ == '__main__':
     app.run("0.0.0.0", port=3000)
