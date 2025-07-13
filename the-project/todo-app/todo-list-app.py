@@ -11,7 +11,7 @@ dirname = os.path.dirname(__file__)
 
 @app.route('/todos', methods=['POST'])
 def handle_todos():
-    response = requests.post("http://todo-list-svc:4040/todos", data=request.form)
+    response = requests.post(os.environ.get('TODO-SVC-LINK'), data=request.form)
     if response.status_code == 200:
         return redirect("/")
     else:
@@ -27,7 +27,7 @@ def main():
 
     if elapsed > 600 or first_req:
         first_req = False
-        response = requests.get("https://picsum.photos/1200")
+        response = requests.get(os.environ.get('RANDOM-PIC-URL'))
 
         if response.status_code == 200:
             # change when deploying in k8s
@@ -36,25 +36,9 @@ def main():
 
         start = last_refreshed
 
-    response_todos = requests.get("http://todo-list-svc:4040/todos").json()
+    response_todos = requests.get(os.environ.get('TODO-SVC-LINK')).json()
 
     return render_template("index.html", todos=response_todos)
 
 if __name__ == '__main__':
-    app.run("0.0.0.0", port=os.environ.get("PORT", 8080))
-
-# import os
-# from http.server import SimpleHTTPRequestHandler, HTTPServer
-#
-# SERVERPORT = int(os.environ.get('PORT', 8080))
-#
-# def main():
-#     httpd = HTTPServer(('', SERVERPORT), SimpleHTTPRequestHandler)
-#
-#     print(f"Started server in port {SERVERPORT}", flush=True)
-#
-#     httpd.serve_forever()
-#
-# if __name__ == '__main__':
-#     main()
-
+    app.run("0.0.0.0", port=int(os.environ.get("APP-PORT", 8080))) # leaving 8080 just as backup just in case

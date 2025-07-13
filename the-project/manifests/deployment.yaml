@@ -23,5 +23,27 @@ spec:
           volumeMounts:
             - name: image-elapsed
               mountPath: /app/static
+          env:
+            - name: APP-PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: todo-list-configmap
+                  key: app_port
+            - name: TODO-SVC-LINK
+              valueFrom:
+                configMapKeyRef:
+                  name: todo-list-configmap
+                  key: todo_svc_link
+            - name: RANDOM-PIC-URL
+              valueFrom:
+                configMapKeyRef:
+                  name: todo-list-configmap
+                  key: random_pic_url
         - name: todo-backend
           image: aritrabb/todo-backend
+          env:
+            - name: BACKEND-PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: todo-list-configmap
+                  key: backend_port

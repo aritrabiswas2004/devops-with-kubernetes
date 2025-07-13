@@ -1,4 +1,5 @@
 from flask import Flask, request, redirect
+import os
 
 app = Flask(__name__)
 
@@ -18,5 +19,5 @@ def get_todos():
     return todos
 
 if __name__ == '__main__':
-    app.run("0.0.0.0", port=4040)
+    app.run("0.0.0.0", port=int(os.environ.get('BACKEND-PORT', 4040))) # 4040 as backup for my sanity
 
