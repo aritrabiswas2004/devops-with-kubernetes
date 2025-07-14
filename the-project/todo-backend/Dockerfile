@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN pip install flask
+RUN pip install flask psycopg2
 
 CMD ["python3", "todo-list-backend.py"]
 

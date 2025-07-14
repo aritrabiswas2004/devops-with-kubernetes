@@ -4,7 +4,14 @@ Divided into `todo-app` for frontend and `todo-backend` for backend.
 
 ## Deployment
 
-Deployment, Service and Ingress can be created with `kubectl apply -f manifests/`
+The following can be created with `kubectl apply -f manifests/`
+
+- Deployment (both containers)
+- Service (x2)
+- Ingress
+- ConfigMap
+- StatefulSet
+- Secret (encrypted)
 
 ## Volumes
 

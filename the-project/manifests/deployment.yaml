@@ -47,3 +47,28 @@ spec:
                 configMapKeyRef:
                   name: todo-list-configmap
                   key: backend_port
+            - name: DB-USER
+              valueFrom:
+                configMapKeyRef:
+                  name: todo-list-configmap
+                  key: db_user
+            - name: DB-NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: todo-list-configmap
+                  key: db_name
+            - name: DB-PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: todo-list-configmap
+                  key: db_port
+            - name: DB-SVC-NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: todo-list-configmap
+                  key: db_svc_name
+            - name: DB-PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: db-password-secret
+                  key: db_password
