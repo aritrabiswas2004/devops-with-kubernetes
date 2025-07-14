@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY ping-pong.py .
 
-RUN pip install flask
+RUN pip install flask psycopg2
 
 CMD ["python3", "ping-pong.py"]
 

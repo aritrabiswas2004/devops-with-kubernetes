@@ -4,7 +4,11 @@ This is the ping pong application in the `exercises` namespace in my cluster.
 
 ## Deployment
 
-Deployment and Service can be created by `kubectl apply -f manifests/`
+The following can be created by `kubectl apply -f manifests/`
+
+- StatefulSet (and related Service)
+- Deployment
+- Service
 
 ## Volumes
 
