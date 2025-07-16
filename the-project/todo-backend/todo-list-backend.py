@@ -1,8 +1,12 @@
 from flask import Flask, request
 import os
 import psycopg2
+import logging
 
 app = Flask(__name__)
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 conn = psycopg2.connect(
     host=os.environ.get('DB-SVC-NAME'),
@@ -40,7 +44,14 @@ def append_todo_item_to_db(new_todo):
 @app.route('/todos', methods=["GET", "POST"])
 def get_todos():
     if request.method == "POST":
-        append_todo_item_to_db(request.values.get("todo-input"))
+        todo_task = request.values.get("todo-input")
+
+        if len(todo_task) > 140:
+            logger.warning(f"TODO ITEM TOO LONG (>140 chars): {todo_task}")
+            return "failure"
+        
+        logger.info(f"SUCCESSFULLY ADDED TODO ITEM: {todo_task}")
+        append_todo_item_to_db(todo_task)
         return "success"
 
     return get_todos_list_from_db()
