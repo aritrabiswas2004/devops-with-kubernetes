@@ -38,6 +38,10 @@ def read_pongs_from_db():
 
     return value
 
+@app.route('/')
+def health_check():
+    return f"Server Healthy!", {'Content-Type': 'text/plain'}
+
 @app.route('/pings')
 def get_pings():
     count = read_pongs_from_db()

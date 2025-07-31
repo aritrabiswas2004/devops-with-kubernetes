@@ -14,8 +14,11 @@ spec:
         app: log-output-app
     spec:
       volumes:
-        - name: shared-logs
-          emptyDir: {}
+        # - name: shared-logs
+        #   emptyDir: {}
+        - name: persistent-log-volume
+          persistentVolumeClaim:
+            claimName: log-ping-claim
         - name: config
           configMap:
             name: log-output-configmap
@@ -26,7 +29,7 @@ spec:
         - name: log-writer
           image: aritrabb/log-writer:latest
           volumeMounts:
-            - name: shared-logs
+            - name: persistent-log-volume
               mountPath: /logs
 
         - name: log-reader
@@ -34,7 +37,7 @@ spec:
           ports:
             - containerPort: 3000
           volumeMounts:
-            - name: shared-logs
+            - name: persistent-log-volume
               mountPath: /logs
             - name: config
               mountPath: /config
