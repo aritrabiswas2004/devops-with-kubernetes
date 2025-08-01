@@ -9,5 +9,7 @@ The following can be created with `kubectl apply -f manifests/`
 - ConfigMap
 - Deployment
 - Service
-- Ingress
+- Ingress (if applicable)
+- Gateway
+- HTTPRoute
 

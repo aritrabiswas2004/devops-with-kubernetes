@@ -14,5 +14,5 @@ The following can be created by `kubectl apply -f manifests/`
 
 For the exercises that required a PV and PVC, it can be created with `kubectl apply -f volumes/`
 
-> In case of exercises working on GKE, `persistenvolume.yaml` file in completely commented since GKE dynamically provisions persistent disks.
+> In case of exercises working on GKE, `persistentvolume.yaml` file in completely commented since GKE dynamically provisions persistent disks.
 
