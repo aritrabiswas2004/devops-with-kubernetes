@@ -43,3 +43,4 @@
 ### Chapter 4
 
 - [3.1](https://github.com/aritrabiswas2004/devops-with-kubernetes/tree/3.1/ping-pong)
+- [3.2](https://github.com/aritrabiswas2004/devops-with-kubernetes/tree/3.2/log-output)
