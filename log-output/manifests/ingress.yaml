@@ -1,23 +1,25 @@
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: log-output-ing
-  namespace: exercises
-spec:
-  rules:
-  - http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: log-output-svc
-            port:
-              number: 2345
-      - path: /pingpong
-        pathType: Prefix
-        backend:
-          service:
-            name: ping-pong-svc
-            port:
-              number: 3456
+# Not needed when using Gateway API hence commented
+
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: log-output-ing
+#   namespace: exercises
+# spec:
+#   rules:
+#   - http:
+#       paths:
+#       - path: /
+#         pathType: Prefix
+#         backend:
+#           service:
+#             name: log-output-svc
+#             port:
+#               number: 2345
+#       - path: /pingpong
+#         pathType: Prefix
+#         backend:
+#           service:
+#             name: ping-pong-svc
+#             port:
+#               number: 3456
