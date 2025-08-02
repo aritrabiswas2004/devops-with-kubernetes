@@ -3,9 +3,9 @@
 #### 2025
 
 > [!NOTE]
-> I changed my GitHub username halfway through this course from `Repositoir` to `aritrabiswas2004`. GitHub automatically redirects to the correct repository/commit/release even
-> on the old username but
-> if there is any error or 404 Not Found status, you may have to manually correct the username in the URL bar.
+> I changed my GitHub username halfway through this course from `Repositoir` to `aritrabiswas2004`. GitHub automatically redirects to the correct repository/commit/release
+> that uses the old username but
+> if there is any error or 404 Not Found status, you may have to manually correct the username in the URL.
 >
 > The links to the releases in this README file are correct and you can always rely on them.
 
