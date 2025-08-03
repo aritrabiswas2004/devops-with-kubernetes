@@ -46,3 +46,4 @@
 - [3.2](https://github.com/aritrabiswas2004/devops-with-kubernetes/tree/3.2/log-output)
 - [3.3](https://github.com/aritrabiswas2004/devops-with-kubernetes/tree/3.3/log-output)
 - [3.4](https://github.com/aritrabiswas2004/devops-with-kubernetes/tree/3.4/ping-pong)
+- [3.5](https://github.com/aritrabiswas2004/devops-with-kubernetes/tree/3.5/the-project)
