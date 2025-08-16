@@ -9,3 +9,4 @@ The answers for The Project was done in a seperate repo for exercises `3.6` - `3
 - [Release for exercise 3.8](https://github.com/aritrabiswas2004/mooc-the-project/tree/3.8)
 - [Release for exercise 3.9](https://github.com/aritrabiswas2004/mooc-the-project/tree/3.9)
 - [Release for exercise 3.10](https://github.com/aritrabiswas2004/mooc-the-project/tree/3.10)
+- [Release for exercise 3.11](https://github.com/aritrabiswas2004/mooc-the-project/tree/3.11)
