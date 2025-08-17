@@ -1,6 +1,6 @@
 # TODO List Application
 
-The answers for The Project was done in a seperate repo for exercises `3.6` - `3.10`. See the links below
+The answers for The Project was done in a seperate repo for exercises `3.6` - `3.12`. See the links below
 
 ### [Project Repository](https://github.com/aritrabiswas2004/mooc-the-project)
 
@@ -10,3 +10,4 @@ The answers for The Project was done in a seperate repo for exercises `3.6` - `3
 - [Release for exercise 3.9](https://github.com/aritrabiswas2004/mooc-the-project/tree/3.9)
 - [Release for exercise 3.10](https://github.com/aritrabiswas2004/mooc-the-project/tree/3.10)
 - [Release for exercise 3.11](https://github.com/aritrabiswas2004/mooc-the-project/tree/3.11)
+- [Release for exercise 3.12](https://github.com/aritrabiswas2004/mooc-the-project/tree/3.12)
