@@ -16,4 +16,10 @@ spec:
       containers:
         - name: ping-pong
           image: aritrabb/ping-pong
+          readinessProbe:
+            initialDelaySeconds: 20
+            periodSeconds: 5
+            httpGet:
+              path: /healthz
+              port: 4040
 

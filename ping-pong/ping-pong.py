@@ -1,17 +1,29 @@
 from flask import Flask
 import psycopg2
+import time
 
 app = Flask(__name__)
 
-conn = psycopg2.connect(
-    host="postgres-svc",
-    port=5432,
-    dbname="pongsdb",
-    user="postgres",
-    password="postgres"
-)
+def get_connection():
+    global conn
+    global cur
 
-cur = conn.cursor()
+    while True:
+        try:
+            conn = psycopg2.connect(
+                host="postgres-svc",
+                port=5432,
+                dbname="pongsdb",
+                user="postgres",
+                password="postgres"
+            )
+            cur = conn.cursor()
+            break
+        except psycopg2.OperationalError:
+            print("Trying again")
+            time.sleep(2)
+
+get_connection()
 
 def init_db():
     cur.execute("CREATE TABLE IF NOT EXISTS pongs (pong_count int)")
@@ -37,6 +49,15 @@ def read_pongs_from_db():
     value = cur.fetchall()[0][0]
 
     return value
+
+@app.route('/healthz')
+def health_state():
+    try:
+        cur.execute("SELECT 1")
+        return ("ok", 200)
+    except:
+        return ("db conn failed", 500)
+
 
 @app.route('/pings')
 def get_pings():

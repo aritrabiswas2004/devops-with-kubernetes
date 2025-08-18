@@ -5,11 +5,6 @@ import os
 app = Flask(__name__)
 
 def read_pongs():
-    # try:
-    #     with open("/logs/pongs.log", "r") as fileptr:
-    #         return fileptr.read()
-    # except FileNotFoundError:
-    #     return "No pingi-pongo yet!"
     try:
         response = requests.get("http://ping-pong-svc:3456/pings") # change this
 
@@ -35,6 +30,15 @@ def file_message():
         contents = fileptr.read()
 
     return f"file content: {contents}"
+
+@app.route('/healthz')
+def check_ping_pong_health():
+    response = requests.get("http://ping-pong-svc:3456/pings")
+
+    if response.status_code == 200:
+        return ("all ok", 200)
+
+    return ("ping-pong not ready", 500)
 
 @app.route('/')
 def main():

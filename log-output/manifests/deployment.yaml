@@ -14,8 +14,6 @@ spec:
         app: log-output-app
     spec:
       volumes:
-        # - name: shared-logs
-        #   emptyDir: {}
         - name: persistent-log-volume
           persistentVolumeClaim:
             claimName: log-ping-claim
@@ -34,6 +32,12 @@ spec:
 
         - name: log-reader
           image: aritrabb/log-reader:latest
+          readinessProbe:
+            initialDelaySeconds: 20
+            periodSeconds: 5
+            httpGet:
+              path: /healthz
+              port: 3000
           ports:
             - containerPort: 3000
           volumeMounts:
