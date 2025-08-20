@@ -59,3 +59,4 @@
 
 - [4.1](https://github.com/aritrabiswas2004/devops-with-kubernetes/tree/4.1/log-output)
 - [4.2](https://github.com/aritrabiswas2004/mooc-the-project/tree/4.2)
+- [4.3](https://github.com/aritrabiswas2004/devops-with-kubernetes/blob/4.3/the-project/PROMETHEUS_QUERY.md)
