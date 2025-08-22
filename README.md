@@ -61,3 +61,4 @@
 - [4.2](https://github.com/aritrabiswas2004/mooc-the-project/tree/4.2)
 - [4.3](https://github.com/aritrabiswas2004/devops-with-kubernetes/blob/4.3/the-project/PROMETHEUS_QUERY.md)
 - [4.4](https://github.com/aritrabiswas2004/devops-with-kubernetes/tree/4.4/ping-pong)
+- [4.5](https://github.com/aritrabiswas2004/mooc-the-project/tree/4.5)
