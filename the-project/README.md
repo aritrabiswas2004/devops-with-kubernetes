@@ -17,4 +17,5 @@ The answers for The Project was done in a seperate repo from exercise `3.6` and 
 **Chapter 5**
 
 - [Release for exercise 4.2](https://github.com/aritrabiswas2004/mooc-the-project/tree/4.2)
-- [Release for exercise 4.3](https://github.com/aritrabiswas2004/devops-with-kubernetes/blob/4.3/the-project/PROMETHEUS_QUERY.md)
+- [Release for exercise 4.3](https://github.com/aritrabiswas2004/devops-with-kubernetes/blob/4.3/the-project/PROMETHEUS_QUERY.md)(not part of The Project)
+- [Release for exercise 4.5](https://github.com/aritrabiswas2004/mooc-the-project/tree/4.5)
