@@ -49,8 +49,8 @@ jobs:
       - name: Use right image
         run: |
           cd ./log-output
-          kustomize edit set image PROJECT/IMAGE1=$IMAGE_TAG1
-          kustomize edit set image PROJECT/IMAGE2=$IMAGE_TAG2
+          kustomize edit set image placeholder/log-writer=$IMAGE_TAG1
+          kustomize edit set image placeholder/log-reader=$IMAGE_TAG2
 
       - name: commit kustomization.yaml to GitHub
         uses: EndBug/add-and-commit@v9
