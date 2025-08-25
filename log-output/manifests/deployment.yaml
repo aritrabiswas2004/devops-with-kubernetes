@@ -25,13 +25,13 @@ spec:
                 path: "information.txt"
       containers:
         - name: log-writer
-          image: aritrabb/log-writer:latest
+          image: PROJECT/IMAGE1 # aritrabb/log-writer:latest
           volumeMounts:
             - name: persistent-log-volume
               mountPath: /logs
 
         - name: log-reader
-          image: aritrabb/log-reader:latest
+          image: PROJECT/IMAGE2 # aritrabb/log-reader:latest
           readinessProbe:
             initialDelaySeconds: 20
             periodSeconds: 5
