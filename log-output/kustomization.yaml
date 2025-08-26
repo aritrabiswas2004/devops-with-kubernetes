@@ -10,7 +10,7 @@ resources:
 images:
 - name: placeholder/log-reader
   newName: europe-north1-docker.pkg.dev/dwk-gke-467121/my-repository/log-reader
-  newTag: main-8bc330407d081ecd79b8295264050c5f01412d48
+  newTag: main-f271fffea396ea88153a3593d091eac21a7b8d16
 - name: placeholder/log-writer
   newName: europe-north1-docker.pkg.dev/dwk-gke-467121/my-repository/log-writer
-  newTag: main-8bc330407d081ecd79b8295264050c5f01412d48
+  newTag: main-f271fffea396ea88153a3593d091eac21a7b8d16
