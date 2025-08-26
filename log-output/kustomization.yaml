@@ -1,9 +1,16 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-- volumes/persistentvolumeclaim.yaml # had to copy it from ping-pong volumes
+- volumes/persistentvolumeclaim.yaml
 - manifests/deployment.yaml
 - manifests/service.yaml
 - manifests/configmap.yaml
 - manifests/route.yaml
 - manifests/gateway.yaml
+images:
+- name: placeholder/log-reader
+  newName: europe-north1-docker.pkg.dev/dwk-gke-467121/my-repository/log-reader
+  newTag: main-56bba3fdff5fd92236ae8157775a315226d8feda
+- name: placeholder/log-writer
+  newName: europe-north1-docker.pkg.dev/dwk-gke-467121/my-repository/log-writer
+  newTag: main-56bba3fdff5fd92236ae8157775a315226d8feda
