@@ -8,6 +8,8 @@ This application is split into `log-reader` and `log-writer`.
 
 Is done upon push to the repo and the `kustomization.yaml` in the root of the log-output application.
 
+<!--Some filler comment-->
+
 ### Deployment other way
 
 The following can be created with `kubectl apply -f manifests/`
