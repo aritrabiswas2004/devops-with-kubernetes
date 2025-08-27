@@ -20,3 +20,4 @@ The answers for The Project was done in a seperate repo from exercise `3.6` and 
 - [Release for exercise 4.3](https://github.com/aritrabiswas2004/devops-with-kubernetes/blob/4.3/the-project/PROMETHEUS_QUERY.md)(not part of The Project)
 - [Release for exercise 4.5](https://github.com/aritrabiswas2004/mooc-the-project/tree/4.5)
 - Exercise 4.6 was skipped
+- [Release for exercise 4.8](https://github.com/aritrabiswas2004/mooc-the-project/tree/4.8)
