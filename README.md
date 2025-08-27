@@ -64,3 +64,4 @@
 - [4.5](https://github.com/aritrabiswas2004/mooc-the-project/tree/4.5)
 - ~~4.6~~ (skipped)
 - [4.7](https://github.com/aritrabiswas2004/devops-with-kubernetes/tree/4.7/log-output)
+- [4.8](https://github.com/aritrabiswas2004/mooc-the-project/tree/4.8)
