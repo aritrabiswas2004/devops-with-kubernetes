@@ -67,3 +67,14 @@
 - [4.8](https://github.com/aritrabiswas2004/mooc-the-project/tree/4.8)
 - [4.9](https://github.com/aritrabiswas2004/mooc-the-project/tree/4.9)
 - [4.10](https://github.com/aritrabiswas2004/mooc-the-project/tree/4.10)
+
+### Chapter 6
+
+- [5.1](https://github.com/aritrabiswas2004/k8s-controller/tree/5.1)
+- [5.2](https://github.com/aritrabiswas2004/dwk-istio/tree/5.2)
+- [5.3](https://github.com/aritrabiswas2004/log-service-mesh/tree/5.3)
+- [5.4](https://github.com/aritrabiswas2004/wikipedia-init-sidecar/tree/5.4)
+- 5.5 - Answered in Course
+- [5.6](https://github.com/aritrabiswas2004/knative-serverless/tree/5.6)
+- [5.7](https://github.com/aritrabiswas2004/ping-pong-serverless/tree/5.7)
+- [5.8](https://github.com/aritrabiswas2004/cncf-landscape/tree/5.8)
